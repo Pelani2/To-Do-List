@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        To Do List
+    </title>
+    <link rel="stylesheet" href="files/cssFiles/style.css">
+</head>
+<body>
+    <div id="frame">
+        <h1>
+            To-Do List
+        </h1>
+
+        <button type="button" onclick="addTask()" id="addTaskButton">
+            Add task
+        </button>
+
+        <div id="taskHolder">
+            <h3>
+                Task Description
+            </h3>
+
+            <input type="text" id="taskContent">
+
+            <div id="buttonHolder">
+                <button type="button" onclick="createNewTask()" id="createButton">
+                    Create
+                </button>
+                <button type="button" onclick="closeTaskWindow()"
+                id="closeButton">
+                    Close
+                </button>
+                <button type="button" onclick="resetTextContent()"
+                id="resetButton">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div id="taskContainer"></div>
+
+        <button type="button" onclick="removeAllTasks()"
+        id="deleteAllTasksButton">
+            Delete all tasks
+        </button>
+
+        <button id="colorModeHolder">
+                Color Modes 
+                <div class="dropdown-menu">
+                    <a href="#">
+                        Dark Mode
+                    </a>
+                    <a href="#" class="menu-anchor">
+                        Light Mode
+                    </a>
+                    <a href="#" class="menu-anchor">
+                        Normal Mode
+                    </a>
+                </div>
+        </button>  
+    </div>
+    
+    <script src="files/jsFiles/jsSmt.js"></script>
+    <script src="files/jsFiles/darkAndLight.js"></script>
+</body>
+</html>
