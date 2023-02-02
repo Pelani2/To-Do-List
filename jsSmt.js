@@ -104,29 +104,38 @@ function createNewTask() {
                 this.style.color = '#73605A';
             });
 
-            // todo: a click function for done button to check if there are no checkmarks, if there are none it'll create one and not more
-            doneButton.addEventListener("click", function() {
-                const checkmark = String.fromCharCode(10003);
-                const existingCheckmark = document.querySelector(".checkmark");
-                if (!existingCheckmark) {
-                    const checkmarkElement = document.createElement("span");
-                    checkmarkElement.classList.add("checkmark");
-                    checkmarkElement.textContent = checkmark;
-                    newParagraph.appendChild(checkmarkElement);
+            // defining the function to apply the changes to other parent elements
+            function updateParent() {
+                // get the parent element of the button
+                const parent = this.parentElement;
 
-                    // todo: styling the checkmark element
-                    {
-                        checkmarkElement.style.color = "#9EF277";
-                        checkmarkElement.style.position = "absolute";
-                        checkmarkElement.style.right = "0";
-                        checkmarkElement.style.top = "0";
-                        checkmarkElement.style.transform = "translate(-50%, 25%)";
-                    }
-                    
-                    // todo: making the text content green when Done button is clicked
-                    newParagraph.style.color = "#9EF277";
+                // check if parent element already has a checkmark
+                if (parent.querySelector("span.checkmark")) {
+                    return;
                 }
-            });
+
+                // create the checkmark symbol
+                const checkmark = document.createElement("span");
+                checkmark.innerHTML = String.fromCharCode(10003);
+                checkmark.classList.add("checkmark");
+
+                // add the checkmark symbol to its parent element
+                parent.appendChild(checkmark);
+
+                // style the color of the parent element
+                parent.style.color = "#B2F252";
+
+                // doneButton and deleteTaskButton are hidden after doneButton is clicked
+                doneButton.style.display = "none";
+                deleteTaskButton.style.display = "none";
+
+                // styling the checkmark symbol
+                checkmark.style.position = "absolute";
+                checkmark.style.top = "0";
+                checkmark.style.right = "0";
+                checkmark.style.transform = "translate(-50%, 0%)";
+            }
+            doneButton.addEventListener("click", updateParent);
         });
 
         // todo: creating a delete task button inside the new paragraph on a mouseover
