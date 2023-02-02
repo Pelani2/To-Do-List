@@ -29,16 +29,6 @@ function addTask() {
     taskHolder.style.display = 'block';
 }
 
-// creating a keyboard interaction with "addTaskButton"
-{
-    var addTaskButton = document.getElementById("addTaskButton");
-    document.addEventListener("keydown", function(event) {
-        if (event.keyCode === 115) {
-            addTaskButton.click();
-        }
-    });
-}
-
 // styling the 'addTask' button
 {
     var addTaskButton = document.getElementById('addTaskButton');
