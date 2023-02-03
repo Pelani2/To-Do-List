@@ -2,6 +2,7 @@
 {
     const colorModeHolderTrigger = document.getElementById("colorModeHolder");
     const menu = document.querySelector('.dropdown-menu');
+    menu.style.marginTop = "15px";
 
     colorModeHolderTrigger.addEventListener("mouseover", function() {
         this.style.cursor = 'pointer';
@@ -39,13 +40,12 @@
             anchors[q].style.textDecoration = "none";
             anchors[q].style.fontSize = "16px";
             anchors[q].style.marginBottom = '5.5px';
-            anchors[q].style.marginTop = '5.5px';
+            anchors[q].style.marginTop = '6.5px';
             anchors[q].style.textAlign = "center";
             anchors[q].style.padding = '5px';
             anchors[q].style.display = 'flex';
             anchors[q].style.justifyContent = 'center';
             anchors[q].style.alignItems = 'center';
-
             anchors[q].addEventListener("mouseover", function() {
                 this.style.backgroundColor = "#BF8F73";
                 this.style.color = "#73605A";
@@ -143,6 +143,14 @@
         const colorModeHolder = document.getElementById("colorModeHolder");
         colorModeHolder.style.backgroundColor = lightGrayishYellow;
         colorModeHolder.style.color = mediumGray;
+        colorModeHolder.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = darkGrey;
+            this.style.color = veryLightGrayishYellow;
+        });
+        colorModeHolder.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = lightGrayishYellow;
+            this.style.color = mediumGray;
+        });
 
         // styling the anchors inside the dropdown menu
         const dropdownMenu = document.querySelector(".dropdown-menu");
