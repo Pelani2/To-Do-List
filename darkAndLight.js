@@ -244,6 +244,34 @@
                 this.style.border = "1px solid #025951";
             });
         }
+
+        // styling the color mode holder
+        colorModeHolder.style.backgroundColor = blueGreen;
+        colorModeHolder.style.color = veryDarkGrey;
+        colorModeHolder.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = veryDarkGrey;
+            this.style.color = deepGreen;
+        });
+        colorModeHolder.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = blueGreen;
+            this.style.color = veryDarkGrey;
+        });
+
+        // styling the anchors inside the mode holder
+        const dropdownMenu = document.getElementById("dropdown");
+        const colorAnchors = dropdownMenu.children;
+        for (var q = 0; q < colorAnchors.length; q++) {
+            colorAnchors[q].style.backgroundColor = blueGreen;
+            colorAnchors[q].style.color = veryDarkGrey;
+            colorAnchors[q].addEventListener("mouseenter", function() {
+                this.style.backgroundColor = veryDarkGrey;
+                this.style.color = deepGreen;
+            });
+            colorAnchors[q].addEventListener("mouseleave", function() {
+                this.style.backgroundColor = blueGreen;
+                this.style.color = veryDarkGrey;
+            });
+        }
     });
 }
 
