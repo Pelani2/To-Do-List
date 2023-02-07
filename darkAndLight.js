@@ -87,19 +87,23 @@
         const addTaskButton = document.getElementById("addTaskButton");
         addTaskButton.style.backgroundColor = lightGrayishYellow;
         addTaskButton.style.color = mediumGray;
+        addTaskButton.style.border = "0px";
         addTaskButton.addEventListener("mouseenter", function() {
             this.style.backgroundColor = darkGrey;
             this.style.color = veryLightGrayishYellow;
+            this.style.border = "0px";
         });
         addTaskButton.addEventListener("mouseleave", function() {
             this.style.backgroundColor = lightGrayishYellow;
             this.style.color = mediumGray;
+            this.style.border = "0px";
         });
 
         // styling the deleteAllTasksButton
         const deleteAllTasksButton = document.getElementById("deleteAllTasksButton");
         deleteAllTasksButton.style.backgroundColor = lightGrayishYellow;
         deleteAllTasksButton.style.color = mediumGray;
+        deleteAllTasksButton.style.border = "0px";
         deleteAllTasksButton.addEventListener("mouseenter", function() {
             this.style.backgroundColor = darkGrey;
             this.style.color = veryLightGrayishYellow;
@@ -189,31 +193,27 @@
         // styling add task button
         addTaskButton.style.backgroundColor = blueGreen;
         addTaskButton.style.color = veryDarkGrey;
-        addTaskButton.style.border = "2px solid #025951"
+        addTaskButton.style.border = "0px";
         addTaskButton.addEventListener("mouseenter", function() {
             this.style.backgroundColor = veryDarkGrey;
             this.style.color = deepGreen;
-            this.style.border = "2px solid #030A8C";
         });
         addTaskButton.addEventListener("mouseleave", function() {
             this.style.backgroundColor = blueGreen;
             this.style.color = veryDarkGrey;
-            this.style.border = "2px solid #025951";
         });
 
         // styling delete all tasks button
         deleteAllTasksButton.style.backgroundColor = blueGreen;
         deleteAllTasksButton.style.color = veryDarkGrey;
-        deleteAllTasksButton.style.border = "2px solid #025951";
+        deleteAllTasksButton.style.border = "0px";
         deleteAllTasksButton.addEventListener("mouseenter", function() {
             this.style.backgroundColor = veryDarkGrey;
             this.style.color = deepGreen;
-            this.style.border = "2px solid #030A8C";
         });
         deleteAllTasksButton.addEventListener("mouseleave", function() {
             this.style.backgroundColor = blueGreen;
             this.style.color = veryDarkGrey;
-            this.style.border = "2px solid #025951";
         });
 
         // styling the task holder
@@ -283,4 +283,70 @@
     const lightBeige = "#D9CA9C";
     const mediumBrown = "#BF8F73";
     const darkPurple = "#73605A";
+
+    const normalButton = document.getElementById("normalModeButton");
+    normalButton.addEventListener("click", function() {
+        // styling the frame
+        frame.style.backgroundColor = darkGrey;
+
+        // styling the frame title
+        frameTitle.style.color = lightBeige;
+
+        // styling the add task button
+        addTaskButton.style.backgroundColor = lightBeige;
+        addTaskButton.style.color = darkBlue;
+        addTaskButton.style.border = "0px";
+        addTaskButton.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = mediumBrown;
+            this.style.color = darkBlue;
+            this.style.border = "0px";
+        });
+        addTaskButton.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = lightBeige;
+            this.style.color = darkBlue;
+            this.style.border = "0px";
+        });
+
+        // styling delete all tasks button
+        deleteAllTasksButton.style.backgroundColor = lightBeige;
+        deleteAllTasksButton.style.color = darkBlue;
+        deleteAllTasksButton.style.border = "0px";
+        deleteAllTasksButton.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = mediumBrown;
+            this.style.color = darkBlue;
+        });
+        deleteAllTasksButton.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = lightBeige;
+            this.style.color = darkBlue;
+        });
+
+        // styling the task holder
+        taskHolder.style.border = "2px solid #D9CA9C";
+
+        // styling the task holder title
+        taskHolderTitle.style.color = lightBeige;
+
+        // styling the task content
+        taskContent.style.backgroundColor = darkBlue;
+        taskContent.style.color = lightBeige;
+        taskContent.style.border = "0px";
+
+        // styling anchors inside a button holder
+        const buttons = buttonHolder.children;
+        for (var q = 0; q < buttons.length; q++) {
+            buttons[q].style.border = "0px";
+            buttons[q].style.color = darkBlue;
+            buttons[q].style.backgroundColor = lightBeige;
+            buttons[q].addEventListener("mouseenter", function() {
+                this.style.backgroundColor = darkBlue;
+                this.style.color = lightBeige;
+                this.style.border = "0px";
+            });
+            buttons[q].addEventListener("mouseleave", function() {
+                this.style.backgroundColor = lightBeige;
+                this.style.color = darkBlue;
+                this.style.border = "0px";
+            });
+        }
+    });
 }
